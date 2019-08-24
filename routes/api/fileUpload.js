@@ -19,8 +19,8 @@ cloudinary.config({
          if(err){
              return res.json(err);
          }
-         console.log(result);
-         res.json(result.url);
+         console.log(result.url);
+         res.json(result);
      })
    });
 
