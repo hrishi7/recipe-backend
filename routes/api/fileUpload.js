@@ -14,14 +14,13 @@ cloudinary.config({
   //@desc   Post for fileipload
   //@access public
   router.post("/", (req, res, next) => {
-    console.log(req.files);
     const file = req.files.photo;
-    // cloudinary.uploader.upload(file.tempFilePath, (err, result)=>{
-    //     if(err){
-    //         return res.json(err);
-    //     }
-    //     res.json(result.url);
-    // })
+     cloudinary.uploader.upload(file.tempFilePath, (err, result)=>{
+         if(err){
+             return res.json(err);
+         }
+         res.json(result.url);
+     })
    });
 
 
