@@ -17,10 +17,9 @@ cloudinary.config({
     const file = req.files.photo;
      cloudinary.uploader.upload(file.tempFilePath, (err, result)=>{
          if(err){
-             return res.json(err);
+             return res.json({ success:false,err});
          }
-         console.log(result.url);
-         res.json(result);
+         return res.json({ success: true,result});
      })
    });
 
